@@ -21,7 +21,8 @@ function Get-SrvanyPath {
         return $exePath
     }
     else {
-        Write-Error "Error: Windows Resource Toolkit srvany not found"
+        Write-Error "Error: Windows Resource Toolkit srvany not found" `
+            -Category NotInstalled
         break
     }
 }
@@ -35,7 +36,7 @@ function Create-MongosService {
             -StartupType Automatic | Out-Null
     }
     else {
-        Write-Error "Service already exists"
+        Write-Error "Service already exists" -Category ResourceExists
         break
     }
 }
@@ -69,7 +70,7 @@ function Check-ConfigFile {
     }
     else {
         Write-Error -Message "Config file path not found. Service not installed" `
-        -Category NotInstalled
+            -Category InvalidArgument
         Exit
     }
 }
@@ -89,7 +90,8 @@ function Check-Mongos {
                 # do nothing
             }
             else {
-                Write-Error -Message "Config file path not specified. Service not installed" -Category NotInstalled
+                Write-Error -Message "Config file path not specified. Service not installed" `
+                    -Category InvalidArgument
                 Exit
             }
         }
@@ -97,7 +99,9 @@ function Check-Mongos {
 }
     
 if ($args.Length -eq 0) {
-    Write-Error -Message "Config file path not specified. Service not installed" -Category NotInstalled
+    Write-Error -Message "Arguments not specified" `
+        -Category InvalidArgument
+    Write-Host "Usage: powershell mongosserviceinstall.ps1 <config file path> <mongos path>"
     Exit
 }
 elseif ($args.Length -eq 1) {
