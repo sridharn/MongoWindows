@@ -1,0 +1,3 @@
+port = 27017
+configdb = localhost:20000
+chunkSize = 1
