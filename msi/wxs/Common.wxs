@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="MONGODB" Name="MongoDB">
+          <Directory Id="INSTALLLOCATION" Name="2.0.4">
+            <Directory Id="BIN" Name="bin" />
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+
+    <!--
+  <WixVariable Id="WixUIDialogBmp" Value="C:\Users\Sridhar\Downloads\mongodb_banner.bmp" />
+  <WixVariable Id="WixUIBannerBmp" Value="path\banner.bmp" />
+  <WixVariable Id="WixUIExclamationIco" Value="path\exclamation.ico" />
+  <WixVariable Id="WixUIInfoIco" Value="path\information.ico" />
+  <WixVariable Id="WixUINewIco" Value="path\new.ico" />
+  <WixVariable Id="WixUIUpIco" Value="path\up.ico" />
+  More information can be found at http://wix.tramontana.co.hu/tutorial/user-interface/ui-wizardry
+    -->
+
+  </Fragment>
+</Wix>

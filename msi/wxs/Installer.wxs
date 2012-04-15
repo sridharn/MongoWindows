@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="853cb1ae-3070-4577-a5f9-d9e1016058f8" 
+           Name="MongoDB" 
+           Language="1033" 
+           Version="2.0.4" 
+           Manufacturer="MongoDB" 
+           UpgradeCode="1ec2f7fd-eb26-4f88-ae96-000891a12f57">
+		<Package InstallerVersion="200" Compressed="yes" />
+
+		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" 
+             Title="MongoDB 2.0.4" 
+             Description="MongoDB 2.0.4" 
+             Level="1">
+      <ComponentRef Id="c_License" />
+      <Feature Id="ImportExportTools"
+               Title ="Import/Export Tools"
+               Description="Tools using for importing and exporting data from a MongoDB instance/cluster"
+               Level ="1000">
+        <ComponentRef Id="c_mongodump"/>
+        <ComponentRef Id="c_mongorestore"/>
+        <ComponentRef Id="c_mongoexport"/>
+        <ComponentRef Id="c_mongoimport"/>
+      </Feature>
+      <Feature Id="Client"
+               Title ="Client"
+               Description="The MongoDB client/shell (mongo)"
+               Level ="1000">
+        <ComponentRef Id="c_mongo"/>
+      </Feature>
+      <Feature Id="Server"
+               Title ="Server"
+               Description="The MongoDB server (mongod)"
+               Level ="1000">
+        <ComponentRef Id="c_mongod"/>
+      </Feature>
+      <Feature Id="Router"
+               Title ="Router"
+               Description="The MongoDB Router (mongos)"
+               Level ="1000">
+          <ComponentRef Id="c_mongos"/>
+      </Feature>
+      <Feature Id="MonitoringTools"
+               Title ="Monitoring Tools"
+               Description="MongoDB monitoring tools"
+               Level ="1000">
+        <ComponentRef Id="c_mongostat"/>
+        <ComponentRef Id="c_mongotop"/>
+      </Feature>
+      <Feature Id="MiscellanousTools"
+              Title ="Miscellaneous Tools"
+              Description="MongoDB monitoring tools"
+              Level ="1000">
+        <ComponentRef Id="c_bsondump"/>
+        <ComponentRef Id="c_mongofiles"/>
+      </Feature>
+			
+			<!-- Note: The following ComponentGroupRef is required to pull in generated authoring from project references. -->
+			<ComponentGroupRef Id="Product.Generated" />
+		</Feature>
+
+    <UIRef Id="WixUI_Mondo" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+
+    <!--
+  <WixVariable Id="WixUIDialogBmp" Value="C:\Users\Sridhar\Downloads\mongodb_banner.bmp" />
+  <WixVariable Id="WixUIBannerBmp" Value="path\banner.bmp" />
+  <WixVariable Id="WixUIExclamationIco" Value="path\exclamation.ico" />
+  <WixVariable Id="WixUIInfoIco" Value="path\information.ico" />
+  <WixVariable Id="WixUINewIco" Value="path\new.ico" />
+  <WixVariable Id="WixUIUpIco" Value="path\up.ico" />
+  More information can be found at http://wix.tramontana.co.hu/tutorial/user-interface/ui-wizardry
+    -->
+
+  </Product>
+</Wix>
