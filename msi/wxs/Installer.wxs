@@ -3,16 +3,16 @@
 	<Product Id="853cb1ae-3070-4577-a5f9-d9e1016058f8" 
            Name="MongoDB" 
            Language="1033" 
-           Version="2.0.4" 
+           Version="$(var.ProductVersion)" 
            Manufacturer="MongoDB" 
            UpgradeCode="1ec2f7fd-eb26-4f88-ae96-000891a12f57">
 		<Package InstallerVersion="200" Compressed="yes" />
 
 		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
-
+    
 		<Feature Id="ProductFeature" 
-             Title="MongoDB 2.0.4" 
-             Description="MongoDB 2.0.4" 
+             Title="MongoDB $(var.ProductVersion)" 
+             Description="MongoDB $(var.ProductVersion)" 
              Level="1">
       <ComponentRef Id="c_License" />
       <Feature Id="ImportExportTools"
@@ -64,6 +64,8 @@
     <UIRef Id="WixUI_Mondo" />
     <UIRef Id="WixUI_ErrorProgressText" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+    
+    <?undefine Version?>
 
     <!--
   <WixVariable Id="WixUIDialogBmp" Value="C:\Users\Sridhar\Downloads\mongodb_banner.bmp" />
