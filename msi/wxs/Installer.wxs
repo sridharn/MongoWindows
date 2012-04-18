@@ -18,7 +18,7 @@
       <Feature Id="ImportExportTools"
                Title ="Import/Export Tools"
                Description="Tools using for importing and exporting data from a MongoDB instance/cluster"
-               Level ="1000">
+               Level ="1">
         <ComponentRef Id="c_mongodump"/>
         <ComponentRef Id="c_mongorestore"/>
         <ComponentRef Id="c_mongoexport"/>
@@ -27,13 +27,13 @@
       <Feature Id="Client"
                Title ="Client"
                Description="The MongoDB client/shell (mongo)"
-               Level ="1000">
+               Level ="1">
         <ComponentRef Id="c_mongo"/>
       </Feature>
       <Feature Id="Server"
                Title ="Server"
                Description="The MongoDB server (mongod)"
-               Level ="1000">
+               Level ="1">
         <ComponentRef Id="c_mongod"/>
       </Feature>
       <Feature Id="Router"
@@ -45,14 +45,14 @@
       <Feature Id="MonitoringTools"
                Title ="Monitoring Tools"
                Description="MongoDB monitoring tools"
-               Level ="1000">
+               Level ="1">
         <ComponentRef Id="c_mongostat"/>
         <ComponentRef Id="c_mongotop"/>
       </Feature>
       <Feature Id="MiscellanousTools"
               Title ="Miscellaneous Tools"
               Description="MongoDB monitoring tools"
-              Level ="1000">
+              Level ="1">
         <ComponentRef Id="c_bsondump"/>
         <ComponentRef Id="c_mongofiles"/>
       </Feature>
