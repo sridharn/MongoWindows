@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Product Id="853cb1ae-3070-4577-a5f9-d9e1016058f8" 
-           Name="MongoDB" 
+           Name="!(wix.ProductName)" 
            Language="1033" 
            Version="$(var.ProductVersion)" 
            Manufacturer="MongoDB" 
            UpgradeCode="1ec2f7fd-eb26-4f88-ae96-000891a12f57">
-		<Package InstallerVersion="200" Compressed="yes" />
+
+    <?if $(var.Platform) = x64 ?>
+  		<Package InstallerVersion="200" Compressed="yes" Platform="x64"/>
+        <WixVariable Id="ProductName" Value="MongoDB $(var.ProductVersion) (64 bit)" />
+    <?else?>
+  		<Package InstallerVersion="200" Compressed="yes" />
+        <WixVariable Id="ProductName" Value="MongoDB $(var.ProductVersion)" />
+    <?endif?>
 
 		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
-    
-		<Feature Id="ProductFeature" 
+
+    <WixVariable Id="WixUIDialogBmp" Value="Dialog.bmp" />
+    <WixVariable Id="WixUIBannerBmp" Value="Banner.bmp" />
+
+    <!--
+  <WixVariable Id="WixUIExclamationIco" Value="path\exclamation.ico" />
+  <WixVariable Id="WixUIInfoIco" Value="path\information.ico" />
+  <WixVariable Id="WixUINewIco" Value="path\new.ico" />
+  <WixVariable Id="WixUIUpIco" Value="path\up.ico" />
+  More information can be found at http://wix.tramontana.co.hu/tutorial/user-interface/ui-wizardry
+    -->
+
+    <Feature Id="ProductFeature" 
              Title="MongoDB $(var.ProductVersion)" 
              Description="MongoDB $(var.ProductVersion)" 
              Level="1">
