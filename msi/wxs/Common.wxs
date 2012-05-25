@@ -4,13 +4,12 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
         <Directory Id="MONGODB" Name="MongoDB">
-          <Directory Id="INSTALLLOCATION" Name="$(var.ProductVersion)">
+          <Directory Id="INSTALLLOCATION" Name="$(var.MongoDBVersion)">
             <Directory Id="BIN" Name="bin" />
           </Directory>
         </Directory>
       </Directory>
     </Directory>
-
-    <?undefine Version?>
+    
   </Fragment>
 </Wix>

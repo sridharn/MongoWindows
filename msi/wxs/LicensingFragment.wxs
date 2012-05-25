@@ -15,7 +15,5 @@
 
     <WixVariable Id="WixUILicenseRtf" Value=".\GNU-AGPL-3.0.rtf" />
 
-    <?define Licenses ?>
-
   </Fragment>
 </Wix>
