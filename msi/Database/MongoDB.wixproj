@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-	<Version Condition=" '$(Version)' == '' ">2.0.4</Version>
-	<License Condition=" '$(License)' == '' ">c:\mongo\mongodb-win32-x86_64-2008plus-2.0.4</License>
-	<Source Condition=" '$(Source)' == '' ">c:\mongo\mongodb-win32-x86_64-2008plus-2.0.4\bin</Source>
+	<Version Condition=" '$(Version)' == '' ">2.2.3</Version>
+	<License Condition=" '$(License)' == '' ">C:\mongo\mongodb-win32-i386-2.2.3</License>
+	<Source Condition=" '$(Source)' == '' ">C:\mongo\mongodb-win32-i386-2.2.3\bin</Source>
     <ProductVersion>3.5</ProductVersion>
     <ProjectGuid>{fc40ea06-5d8c-4edf-9e19-a0bdd9a3a7d5}</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
