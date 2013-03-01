@@ -11,28 +11,29 @@
     <SchemaVersion>2.0</SchemaVersion>
     <OutputName>MongoDB$(Version)_x64</OutputName>
     <OutputType>Package</OutputType>
+    <DefineSolutionProperties>false</DefineSolutionProperties>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <Name>MongoDB</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <OutputPath>bin\$(Configuration)\$(Platform)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
     <DefineConstants>MongoDBVersion=$(Version);LicenseSource=$(License);BinarySource=$(Source)</DefineConstants>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <VerboseOutput>True</VerboseOutput>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <OutputPath>bin\$(Configuration)\$(Platform)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
     <DefineConstants>MongoDBVersion=$(Version);LicenseSource=$(License);BinarySource=$(Source)</DefineConstants>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="wxs\BinaryFragment.wxs" />
-    <Compile Include="wxs\Common_64.wxs" />
+    <Compile Include="wxs\Feature.wxs" />
+    <Compile Include="wxs\Installer_64.wxs" />
     <Compile Include="wxs\LicensingFragment.wxs" />
-    <Compile Include="wxs\Installer.wxs" />
   </ItemGroup>
   <ItemGroup>
     <WixExtension Include="WixUIExtension">

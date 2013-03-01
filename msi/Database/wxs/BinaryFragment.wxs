@@ -14,6 +14,10 @@
         <File Id="f_mongod" Name="mongod.exe" Source="$(var.BinarySource)\mongod.exe"
               DiskId ="1" KeyPath="yes"/>
       </Component>
+      <Component Id="c_mongodPdb" Guid="8B41A2E2-911C-4399-8E9F-D3C1AD3B9EDD">
+        <File Id="f_mongodPdb" Name="mongod.pdb" Source="$(var.BinarySource)\mongod.pdb"
+              DiskId ="1" KeyPath="yes"/>
+      </Component>
       <Component Id="c_mongodump" Guid="FFE32884-ACAD-4EC6-AF84-6BC94F55819E">
         <File Id="f_mongodump" Name="mongodump.exe" Source="$(var.BinarySource)\mongodump.exe"
               DiskId ="1" KeyPath="yes"/>
@@ -30,12 +34,24 @@
         <File Id="f_mongoimport" Name="mongoimport.exe" Source="$(var.BinarySource)\mongoimport.exe"
               DiskId ="1" KeyPath="yes"/>
       </Component>
+      <Component Id="c_mongooplog" Guid="FAD84CBB-4666-4C22-A0DF-E1D2AEEC1601">
+        <File Id="f_mongooplog" Name="mongooplog.exe" Source="$(var.BinarySource)\mongooplog.exe"
+              DiskId ="1" KeyPath="yes"/>
+      </Component>
+      <Component Id="c_mongoperf" Guid="B046CCD2-39DC-4CB4-8A58-A7790148C41E">
+        <File Id="f_mongoperf" Name="mongoperf.exe" Source="$(var.BinarySource)\mongoperf.exe"
+              DiskId ="1" KeyPath="yes"/>
+      </Component>
       <Component Id="c_mongorestore" Guid="72A16D11-242E-4368-93C9-5F6162C548FC">
         <File Id="f_mongorestore" Name="mongorestore.exe" Source="$(var.BinarySource)\mongorestore.exe"
               DiskId ="1" KeyPath="yes"/>
       </Component>
       <Component Id="c_mongos" Guid="3CA63864-9FA0-4DAE-A664-2BE9A157FB60">
         <File Id="f_mongos" Name="mongos.exe" Source="$(var.BinarySource)\mongos.exe"
+              DiskId ="1" KeyPath="yes"/>
+      </Component>
+      <Component Id="c_mongosPdb" Guid="F1694AB8-4B0D-4096-AD67-948063FF2A6C">
+        <File Id="f_mongosPdb" Name="mongos.pdb" Source="$(var.BinarySource)\mongos.pdb"
               DiskId ="1" KeyPath="yes"/>
       </Component>
       <Component Id="c_mongostat" Guid="0A881C85-AB39-4247-BADD-C8191F2FFF0C">
